@@ -707,6 +707,15 @@ commonjs > index.js
 ### node_modules
 - 설치한 라이브러리들이 있는 경로
 
+## 웹팩 (Webpack)
+- 여러개의 파일을 하나로 묶어주는 번들러
+```bash
+   npm init -y
+   npm install -save-dev webpack webpack-cli
+   npx webpack --entry ./src/index.js --output-path ./dist
+   npx webpack --entry ./src/index.js --output-path ./dist --mode development
+
+```
 
 
 
