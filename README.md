@@ -74,7 +74,7 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 5. async
    - HTML 파싱과 함께, 비동기로 Javascript 파일을 불러온다
    - HTML 파싱이 완료되지 않았더라도, 먼저 로딩되는 javascript 파일 부터 실행이 시작 된다
-  ```html
+   ```html
      <script src="script.js" async></script>
    ```
    html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing 중지 -> script execution(스크립트 실행) -> html parsing 이어서 완료
