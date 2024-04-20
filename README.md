@@ -132,3 +132,52 @@ ES5 bind -> this 설정
       }
       person1.sayHello();
 ```
+***화살표 함수는 자신을 포함하고 있는 외부 Scope에서 this를 계승 받는다***
+```javascript
+      //this = person1
+      let person1  = {
+        name: '홍길동',
+        age: 20,
+        sayHello: function() {
+          setTimeout(() => {
+              console.log(this);
+          }, 1000);
+        }
+      }
+      person1.sayHello();
+```
+***화살표 함수 나오기전 예시***
+```javascript
+      //this = person1
+      let person1  = {
+        name: '홍길동',
+        age: 20,
+        sayHello: function() {
+          let that = this;
+          setTimeout(function() {
+               console.log(this);
+               console.log(that.name);
+               console.log(that.age);
+          }, 1000);
+        }
+      }
+      person1.sayHello();
+```
+***strict Mode에서 호출한 놈이 없을 경우 기본값을 window로 하지 않고 undefined로 한다***
+```javascript
+      'use strict'
+      function printThis() {
+         console.log(this);
+      }
+      printThis();
+```
+***화살표함수는 객체 메서드를 선언할때 사용한된다, function(){}권장***
+***화살표함수는 외부스코프인 window를 불러옴***
+```javascript
+      let person = {
+         name: '홍길동',
+         printThis: () => {
+            console.log(this) //window 객체 출력
+         }
+      }
+```
