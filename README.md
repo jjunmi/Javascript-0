@@ -199,3 +199,40 @@ ES5 bind -> this 설정
 ```
  
 *** ***
+
+## Event Phase
+- Capturing = 부모 -> 자식
+- Bubbling = 자식 -> 부모
+- event.eventPhase(이벤트 흐름의 단계를 나타냄) -> capturing부모 요소들[1] -> 클릭요소 본인 [2] -> 다시 부모로 올라갈때 부모요소 bubbling[3]
+```javascript
+   const $div = document.querySelector('div');
+   //true -> Capturing, false -> bubblig (기본값)
+   $div.addEventListener('click', function (event) {
+      console.log('['+ event.eventPahse +']capturing div 태크')
+   }, true)
+   $div.addEventListener('click', function (event) {
+      console.log('['+ event.eventPhase +']bubbling div 태그')
+   }, false)
+```
+***이벤트를 막는 메소드들***
+### e.stopPropagation
+- bubbling, capturing 전파를 막는 메소드
+```javascript
+   //html div -> p 있다 가정
+   const $div = document.querySelector('div');
+   const $p = document.querySelector('p');
+
+   $p.addEventListener('click', function (event) {
+      event.stopPropagation();  
+   })
+```
+### Event.preventDefault()
+-  해당 HTML 요소의 대한 기본 동작을 실행하지 않도록 지정함
+```javascript
+   const $a = document.querySelector('a');
+   $a.addEventListener('click', function(event){
+      event.preventDefault();
+      //문서 이동 안됨
+      //submit, a 기능 막을때 사용
+   })
+```
