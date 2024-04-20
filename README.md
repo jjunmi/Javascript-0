@@ -21,22 +21,22 @@ document.getRootNode() -> 최상위 node 반환
 document.childNodes() -> 하위 node들 반환
 
 <추가 정보는 mdn 참고>
-window
+### window
 - 모든 객체가 소속된 객체이며, 브라우저 창을 의미한다
-document
+### document
 - 현재문서에 대한 정보를 갖고 있는 객체이다
-history
+### history
 - 현재 브하우저가 접근했던 URL history를 제어할 수 있다
 - history.back()
 - history.foward()
-location
+### location
 - 문서의 주소와 관련된 객체로 window 객체의 프로퍼티(window.location)인 동시에 document의 프로퍼티(document.location)이다, 이 객체를 이용하여 윈도우의 문서 URL을 변경할 수 있고, 문서의 위치와 관련해서 다양한 정보를 얻을 수 있다
 - location.host ->현재 홈페이지 주소
 - location.href = 'https://naver.com' ->웹문서 주소URL 변경
-screen
+### screen
 -  사용자의 디스플레이 화면에 대한 다양한 정보를 갖고 있는 객체이다
 - console.dir(screen) -> 객체를 출력
-navigator
+### navigator 
 - 실행중인 애플리케이션(브라우저)에대한 정보를 알 수 있다. 크로스브라우진 이슈를 해경할때 사용 할 수 있다
 - chrome -> addEventListener
 - IE  -> attachEvent
