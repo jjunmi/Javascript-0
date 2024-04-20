@@ -47,31 +47,31 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 
 ## script 선언
 ### 브라우저는 HTML파일을 위에서 아래로 순차적으로 코드를 파싱한다
-1. <script></script> head에 그냥 작성시 작동 원리 :
-    - html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
-2. body 태그 최하단에 <script></script> 선언
-3. window.onload
+<script></script> head에 그냥 작성시 작동 원리 :
+- html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
+1. body 태그 최하단에 <script></script> 선언
+2. window.onload
    - HTML파싱 DOM생성 그리고 외부 콘텐츠(images, script, css, etc)기 로드된 후 발생하는 이벤트이다
    ```javascript
          window.onload = function() {
             //실행코드
          }
    ```
-4. DOMContentLoaded
+3. DOMContentLoaded
     ```javascript
           document.addEventListener('DOMContentLoaded', function(){
             //실행코드
           }
    ```
     html parsing 완료 후 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행)(2, 3, 4)
-5. defer
+4. defer
    - HTML 파싱과 함께, 비동기로 Javascript 파일을 불러온다
    - HTML 파싱 완료후, javascript 코드 실행
    ```html
          <script src="script.js" defer></script>
    ```
    html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing/script fetch(스크립트 가져옴) 끝 ->script execution(스크립트 실행)
-6. defer
+5. defer
   -HTML 파싱과 함께, 비동기로 Javascript 파일을 불러온다
   -HTML 파싱이 완료되지 않았더라도, 먼저 로딩되는 javascript 파일 부터 실행이 시작 된다
   ```html
