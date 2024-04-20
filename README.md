@@ -83,3 +83,52 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 *** ***
 ***동기 blocking - 답변 결과 기다림***<br />
 ***비동기 Non-bloking - 답변 결과 안 기다림***
+
+ES5 bind -> this 설정
+```javascript
+      //this = window
+      let person1  = {
+        name: '홍길동',
+        age: 20,
+        sayHello: function() {
+          setTimeout(
+            function() {
+              console.log(this);
+              console.log('Hello');
+              console.log(this.name);
+          }, 1000);
+        }
+      }
+      person1.sayHello();
+```
+```javascript
+      //this -> person1
+      let person1  = {
+        name: '홍길동',
+        age: 20,
+        sayHello: function() {
+          setTimeout(
+            function() {
+              console.log(this);
+              console.log('Hello');
+              console.log(this.name);
+          }.bind(this), 1000);
+        }
+      }
+      person1.sayHello();
+```
+```javascript
+      //this -> person1
+      let person1  = {
+        name: '홍길동',
+        age: 20,
+        sayHello: function() {
+          function printHello() {
+            console.log(this),
+            console.log(this.name),
+            console.log(this.age)
+         }
+         setTimeout(printHello.bind((this),1000);
+      }
+      person1.sayHello();
+```
