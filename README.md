@@ -51,7 +51,7 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 - html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
 1. body 태그 최하단에 <script></script> 선언
 2. window.onload
-   - HTML파싱 DOM생성 그리고 외부 콘텐츠(images, script, css, etc)기 로드된 후 발생하는 이벤트이다
+   - HTML파싱 DOM생성 그리고 외부 콘텐츠(images, script, css, etc)가 로드된 후 발생하는 이벤트이다
    ```javascript
          window.onload = function() {
             //실행코드
@@ -71,13 +71,13 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
          <script src="script.js" defer></script>
    ```
    html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing/script fetch(스크립트 가져옴) 끝 ->script execution(스크립트 실행)
-5. defer
-  -HTML 파싱과 함께, 비동기로 Javascript 파일을 불러온다
-  -HTML 파싱이 완료되지 않았더라도, 먼저 로딩되는 javascript 파일 부터 실행이 시작 된다
+5. async
+   - HTML 파싱과 함께, 비동기로 Javascript 파일을 불러온다
+   - HTML 파싱이 완료되지 않았더라도, 먼저 로딩되는 javascript 파일 부터 실행이 시작 된다
   ```html
-     <script src="script.js" defer></script>
+     <script src="script.js" async></script>
    ```
-   html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing 중지 ->script execution(스크립트 실행) -> html parsing 이어서 완료
+   html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing 중지 -> script execution(스크립트 실행) -> html parsing 이어서 완료
 
 ## 동기 blocking - 답변 결과 기다림
 ## 비동기 Non-bloking - 답변 결과 안 기다림
