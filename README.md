@@ -181,3 +181,11 @@ ES5 bind -> this 설정
          }
       }
 ```
+## API란?
+### Application Programming Interface
+- 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어 할 수 있게 만든 인터페이스, 응용 프로그램에서 소통하기위한 접점
+- Interface -> 상호간의 소통을 위해 만들어진 접점
+- User Interface -> 사용자가 소통을 위해 만들어진 접점
+- HTTP API(프로토콜) : 공공데이터 API, youtube API, Instagram API, facebook API, naver API, kakao API
+- MQTT, coAP API
+- Class, Funtion
