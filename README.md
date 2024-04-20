@@ -19,7 +19,23 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 - 마우스(하드웨어 인터페이스)
 - document.getRootNode() -> 최상위 node 반환
 - document.childNodes() -> 하위 node들 반환
+
+## API란?
+### Application Programming Interface
+- 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어 할 수 있게 만든 인터페이스, 응용 프로그램에서 소통하기위한 접점
+- Interface -> 상호간의 소통을 위해 만들어진 접점
+- User Interface -> 사용자가 소통을 위해 만들어진 접점
+- HTTP API(프로토콜) : 공공데이터 API, youtube API, Instagram API, facebook API, naver API, kakao API
+- MQTT, coAP API
+- Class, Funtion
+
 *** ***
+- Template Engine기반개발(웹 개발자) : JSP, ASP, PHP
+- 모바일 개발자 = 클라이언트 개발자
+- Android 앱 개발 -> java, kotlin
+- ios 앱 개발 -> Object-C, Swift
+*** ***
+
 <추가 정보는 mdn 참고>
 ### window
 - 모든 객체가 소속된 객체이며, 브라우저 창을 의미한다
@@ -181,11 +197,5 @@ ES5 bind -> this 설정
          }
       }
 ```
-## API란?
-### Application Programming Interface
-- 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어 할 수 있게 만든 인터페이스, 응용 프로그램에서 소통하기위한 접점
-- Interface -> 상호간의 소통을 위해 만들어진 접점
-- User Interface -> 사용자가 소통을 위해 만들어진 접점
-- HTTP API(프로토콜) : 공공데이터 API, youtube API, Instagram API, facebook API, naver API, kakao API
-- MQTT, coAP API
-- Class, Funtion
+ 
+*** ***
