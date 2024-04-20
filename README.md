@@ -1,5 +1,6 @@
 # Javascript
 - html문서를 조작, 제어하기 위해 만들어진 언어
+- 자바스크립트를 브라우저에서 실행하면 웹 애플리케이션, NodeJS환경에서 실행하면 백엔드 애플리케이션
 ```plaintext
 어떻게 조작 제어?
 브라우저엔 웹문서를 해석할 수 있는 렌더링 엔진이 있음,
@@ -386,12 +387,299 @@ ES5 bind -> this 설정
 ```
 *** ***
 
-## 모듈 시스템
+## 모듈 시스템 type="module"
+- AMD -> 가장 오래된 모듈 시스템 중 하나로 requirres.js라는 라이브러리를 통해 처음 개발됨
+- CommonJS -> Node JS 환경을 위해 만들어진 모듈 시스템
+- UMD -> AMD 와 CommonJS와 같은 다양한 모듈 시스템을 함께 사용하기 위해 만들어짐
+- ES Module(ES6) -> 자바스크립트 모듈 시스템
 
+### ES Module(ES6)
+- export (변수 , 함수 , class 내보낼때)
+- import
+```javascript
+   import a_number from './a/js'
+   import b_number from './b.js'
 
+   console.log(a_number);
+   console.log(b_number);
 
+   export defult number
+```
+module > math.js
+```javascript
+   export const perfectScore = 100;
+   export const sum = (num1, num2) => {
+      return num1 + num2;
+   };
+   export const avg = (num1, num2) => {
+      return (num1 + num2 ) / 2
+   };
+```
+index.html > <script type="module" src="index.js"></script> <br />
+module > index.js
+```javascript
+//방법1
+      import {perfectScore, sum , avg} from './math.js';
+      
+      console.log('perfectScore:', prefectScore);
+      console.log('sum', sum(80, 10));
+      console.log('avg', avg(80, 90));
+      //perfectScore: 100
+      //sum: 90
+      //avg: 85
+```
+```javascript
+//방법2
+      //import * as math from './math.js';
+      //모든것들 * as 별칭
+      
+      console.log('perfectScore:', math.prefectScore);
+      console.log('sum', math.sum(80, 10));
+      console.log('avg', math.avg(80, 90));
+      //perfectScore: 100
+      //sum: 90
+      //avg: 85
+```
+#### export default
+module > math.js
+```javascript
+//방법1
+      const subtract = (num1, num2) => {
+         return num1 - num2;
+      }
+      export default subtract;
+```
+module > index.js
+```javascript
+//방법1
+      import subtract from './math.js';
+      //import 이름 지정 from './math.js';
 
+      console.log('substract:', subtract(80, 90));
+      //substract: -10
+```
+module > math.js
+```javascript
+//방법2
+      const perfectScore = 100;
+      const sum = (num1, num2) => {
+         return num1 + num2;
+      };
+      const avg = (num1, num2) => {
+         return (num1 + num2 ) / 2
+      };
+      const subtract = (num1, num2) => {
+         return num1 - num2;
+      }
+      export default {
+         perfectScore,
+         sum,
+         avg,
+         subtract
+      };
+```
+module > index.js
+```javascript
+//방법2
+      import math from './math.js';
 
+      console.log('perfectScore:', math.prefectScore);
+      console.log('sum', math.sum(80, 10));
+      console.log('avg', math.avg(80, 90));
+      console.log('substract:', math.subtract(80, 90));
+      //perfectScore: 100
+      //sum: 90
+      //avg: 85
+      //substract: -10
+```
+### CommonJS
+- NodeJS 환경에서 자바스크립트 모듈을 사용하기 위해 만들어진 모듈 시스템
+- 내보낼때 exports, module.exports
+- 불러올때 require
+- commonjs > math.js
+- commonjs > index.js
+
+commonjs > math.js
+```javascript
+//방법1
+      exports.perfectScore = 100;
+      exports.sum = (num1, num2) => {
+         return num1 + num2;
+      };
+      exports.avg = (num1, num2) => {
+         return (num1 + num2 ) / 2
+      };
+      exports.subtract = (num1, num2) => {
+         return num1 - num2;
+      }
+```
+commonjs > index.js
+```javascript
+//방법1
+      //const, let 사용가능
+      const {perfectScorre, sum, avg, subtract} = require('./math');
+
+      console.log('perfectScore:', prefectScore);
+      console.log('sum', sum(80, 10));
+      console.log('avg', avg(80, 90));
+      console.log('substract:', subtract(80, 90));
+```
+터미널 실행
+```bash
+      node commonjs/index.js
+```
+commonjs > index.js
+```javascript
+//방법1-2
+      //const, let 사용가능
+      const math = require('./math');
+
+      console.log('perfectScore:', math.prefectScore);
+      console.log('sum', math.sum(80, 10));
+      console.log('avg', math.avg(80, 90));
+      console.log('substract:', math.subtract(80, 90));
+```
+터미널 실행
+```bash
+      node commonjs/index.js
+```
+module > math.js
+```javascript
+//방법2 - 하나의 객체로 내보내기
+      const perfectScore = 100;
+      const sum = (num1, num2) => {
+         return num1 + num2;
+      };
+      const avg = (num1, num2) => {
+         return (num1 + num2 ) / 2
+      };
+      const subtract = (num1, num2) => {
+         return num1 - num2;
+      }
+      module.exports = {
+         perfectScore,
+         sum,
+         avg,
+         subtract
+      };
+```
+commonjs > index.js
+```javascript
+//방법2
+      //const, let 사용가능
+      const {perfectScorre, sum, avg, subtract} = require('./math');
+
+      console.log('perfectScore:', prefectScore);
+      console.log('sum', sum(80, 10));
+      console.log('avg', avg(80, 90));
+      console.log('substract:', subtract(80, 90));
+```
+터미널 실행
+```bash
+      node commonjs/index.js
+```
+
+### NodeJS환경에서 ES Module 사용 방법
+- CommonJS 모듈 시스템을 채택했던 NodeJS 환경에서 ES Module을 사용하려면 Babel과 같은 트랜스파일러(traanspiler)를 사용했어야 했는데
+- NodeJS버전 13.2부터 ES Module시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 NodeJS에서 사용가능
+- package.json -> type="module" 선언
+  1. package.json 파일 생성
+     ```javascript
+            {
+               "type" : "module"
+            }
+     ```
+     ```bash
+           node module/inde.js
+     ```
+## NPM
+- Node Package Manager
+- 모듈저장소 -> 다운로드 (npm) -> 애플리케이션
+- Node.js : 자바스크립트 런타임 환경
+
+1. Node.js 설치
+2. node -v
+3. npm -v
+4. npm install dayjs / npm install <모듈명> (라이브러리 다운 사이트: npmjs.com)
+
+```javascript
+      //2024년 5월 1일
+      const getToday = () => {
+         const today = new Date();
+         const year = today.getFullYear();
+         const month = today.getMonth() + 1;
+         const date = today.get,Date();
+         return `${year}년 ${month}월 ${date}일`
+      }
+      console.log(getToday())
+```
+```javascript
+      //2024년 5월 1일 15시 24분 22초
+      const getToday = () => {
+         const today = new Date();
+         const year = today.getFullYear();
+         const month = today.getMonth() + 1;
+         const date = today.get,Date();
+         const hours = today.getHours();
+         const minutes = today.getMinutes();
+         const seconds = today.getSeconds();
+         return `${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분 ${seconds}초`
+      }
+      console.log(getToday())
+```
+```plaintext
+      2024년 5월 1일
+      2024년 5월 1일 15시 24분 22초
+      2024/05/01
+      2024.05.01
+```
+***dayjs.js***
+***moment***
+***nodemon***
+```plaintext
+실습
+1. LEARN-NPM 파일 디렉터리 생성
+2. LEARN-NPM 파일 안에 package.json파일 생성
+   {
+      "name": "learn_npm",
+      "version": "1.0.0"
+   }
+3. npm install dayjs
+4. node_modules 파일 자동 생성됨
+   package-lock.json 파일 자동 생성됨
+   packaget.json 파일 안에 생김
+   {
+      "name": "learn_npm",
+      "version": "1.0.0",
+      "dependencies": {
+         "dayjs": "^1.10.8"
+      }
+   }
+5.npmjs.com 에서 라이브러리 검색: dayjs -> day.js.org 홈페이지 접속 -> get started -> Display -> Format -> 복사
+6. index.js 생선
+   const dayjs = requier('dayjs')
+   console.log(dayjs('2019-01-25').format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]') )
+   console.log(dayjs().format('YYYY-MM-DD'))
+7. node index.js -> YYYYescape 2019-01-25T00:00:00-02:00Z
+   node index.js -> 2024-05-01 (오늘날짜 출력됨)
+```
+### pgakage.json
+- 프로젝트 대한 정보를 갖고 있는 파일
+- dependencies 속성을 활용하여 프로젝트에 의존된 라이브러리를 관리
+- "scripts": {"명령어 설정 start":  "echo helloworld"} -> npm run start
+- dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈
+```bash
+   npm init
+   echo hello world
+   npm i moment
+   npm install --save-dev nodemon
+   
+```
+### pgakage-lock.json
+-프로젝트에 설치된 모듈들의 의존성 트리를 기록하고 있음
+
+### node_modules
+- 설치한 라이브러리들이 있는 경로
 
 
 
