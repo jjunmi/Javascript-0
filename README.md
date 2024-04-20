@@ -47,8 +47,9 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 
 ## script 선언
 ### 브라우저는 HTML파일을 위에서 아래로 순차적으로 코드를 파싱한다
-<script></script> head에 그냥 작성시 작동 원리 :
-- html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
+   <script></script> head에 그냥 작성시 작동 원리 :
+    html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
+    
 1. body 태그 최하단에 <script></script> 선언
 2. window.onload
    - HTML파싱 DOM생성 그리고 외부 콘텐츠(images, script, css, etc)가 로드된 후 발생하는 이벤트이다
