@@ -37,16 +37,16 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 -  사용자의 디스플레이 화면에 대한 다양한 정보를 갖고 있는 객체이다
 - console.dir(screen) -> 객체를 출력
 ### navigator 
-- 실행중인 애플리케이션(브라우저)에대한 정보를 알 수 있다. 크로스브라우진 이슈를 해경할때 사용 할 수 있다
+- 실행중인 애플리케이션(브라우저)에대한 정보를 알 수 있다. 크로스브라우징 이슈를 해결할 때 사용할 수 있다
 - chrome -> addEventListener
 - IE  -> attachEvent
-- navigator.geolovation.getCurrentPosition() ->현재 애플리케이션에 대한 위치정보
-- navigator.appName ->앱(브라우저) 이름을 반환한다
+- navigator.geolocation.getCurrentPosition() -> 현재 애플리케이션에 대한 위치정보
+- navigator.appName -> 앱(브라우저) 이름을 반환한다
 - navigator.appVersion -> 앱(브라우저)에 대한 버전 정보를 반환한다
-- navigator.userAgent ->서버에 요정할 때 앱(브라우저)에 대한 정보이다
+- navigator.userAgent -> 서버에 요정할 때 앱(브라우저)에 대한 정보이다
 
 ## script 선언
-### 브라우저는 HTML파일을 위에서 아래로 순차적으로 코드를 파신한다
+### 브라우저는 HTML파일을 위에서 아래로 순차적으로 코드를 파싱한다
 1. <script></script> head에 그냥 작성시 작동 원리 :
     html parsing -> html parsing 중단 -> script fetch(스크립트 가져옴) -> script execution(스크립트 실행) -> html parsing 이어서진행
 2. body 태그 최하단에 <script></script> 선언
