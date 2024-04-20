@@ -236,3 +236,164 @@ ES5 bind -> this 설정
       //submit, a 기능 막을때 사용
    })
 ```
+
+*** ***
+
+## Array API
+- map()
+- some ()
+- every()
+- filter()
+- reduce()
+  
+### map()
+-  배열 내의 모든 요소 대해서 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환함
+```javascript
+   const numbers = [1, 2, 3, 4, 5, 6, 7];
+   //1.  function
+   const result = numbers.map(function(number){
+      return number * 2;  //[2, 4, 6, 8, 10, 12, 14]
+   });
+   console.log(result);
+```
+```javascript
+   //2. 화살표함수
+   const result = numbers.map((number) => number *2);
+   console.log(result); //[2, 4, 6, 8, 10, 12, 14]
+```
+```javascript
+   class Student{
+      constructor(name, koreanLanguage, english, mathmatics) {
+         this.name = name;
+         this.koreanLanguage = koreanLanguage;
+         this.english = english;
+         this.mathmatics = mathmatics;
+      }
+   }
+   const student1 = new Student('홍길동', 95, 87, 75);
+   const student2 = new Student('김길동', 67, 80, 100);
+   const student3 = new Student('이길동', 89, 75, 80);
+   const student4 = new Student('최길동', 48, 52, 98);
+
+   const students = [student1, student2, student3, student4];
+
+   //map API 로 영어점수만 반환
+   students.map((student) => student.english);
+   console.log('영어 점수', students.map((student) => student.english)); //[87, 80, 75, 52]
+   console.log('학생 이름', students.map((student) => student.name)); //['홍길동', '김길동', '이길동', '최길동']
+```
+### some() -> true/false
+- 배열 안에 어떤 요소라도 주어진 판별 함수를 통과하는지 테스트 한다
+```javascript
+      const fruits = ["사과", "딸기", "배", "참외", "딸기", "수박"];
+      const result = fruits.some((fruit) => fruit === "수박");
+      console.log(result); //true
+```
+```javascript
+      const fruits = ["사과", "딸기", "배", "참외", "딸기", "수박"];
+      console.log(
+         "과일중에 배가 있나요?",
+         fruits.some((fruit, index) => {
+            console.log("index:",index, "fruit", fruit);
+            return fruit === "배";
+         })
+      )
+      //index: 0 fruit: 사과
+      //index: 1 fruit: 딸기
+      //index: 2 fruit: 배
+```
+### every()
+- 배열 안의 모든 요소에 주어진 판별함수가 모두 참일 경우에만 true를 반환함
+```javascript
+      const fruits = ["수박", "수박", "수박", "수박", "딸기", "수박"];
+      const result = fruits.every((fruit) -> fruit === "수박");
+      console.log(reault); //false
+```
+### filter
+- 배열의 각 요소들을 함수에 해당하는 요소들만 필터링해 새 배열로 반환
+```javascript
+   //짝수만 필터링
+   const numbers = [1, 2, 3, 4, 5, 6, 7];
+   const result = numbers.filter((number) => number % 2 === 0);
+   console.log('짝수만 출력', result) //[2, 4, 6]
+
+   const result = numbers.filter((number) => number % 2 === 1);
+   console.log('홀수만 출력', result) //[1, 3, 5, 7]
+```
+
+### reduce
+- 배열의 각 요소에 대해 주어진 리듀서(reducer)함수를 실행하고, 하나의 결과값을 반환함
+#### reducer 함수
+- 누적 값 (acc)
+- 현재 값 (cur)
+- 현재 인덱스 (idx)
+- 원본 배열 (src)
+```javascript
+      //누적합 구하기
+      const number = [1, 2, 3, 4, 5, 6, 7];
+      const result = numbers.reduce((acc, cur, idx, src) => {
+         console.log("acc", acc, "cur", cur, "idx", idx);
+         return acc; // 0이 return 되서 다시 매개변수 acc로 들어감
+      }, 0);
+      console.log("result:", result);
+      //acc = 0
+      //curr = 배열안에 있는요소 1, 2, 3, 4, 5, 6, 7
+      //idx = 0, 1, 2, 3, 4, 5, 6
+
+      //acc: 0 cur:1 idx: 0
+      //acc: 0 cur:2 idx: 1
+      //acc: 0 cur:3 idx: 2
+      //acc: 0 cur:4 idx: 3
+      //acc: 0 cur:5 idx: 4
+      //acc: 0 cur:6 idx: 5
+      //acc: 0 cur:7 idx: 6
+      //result : 0
+```
+```javascript
+      //누적합 구하기
+      const number = [1, 2, 3, 4, 5, 6, 7];
+      const result = numbers.reduce((acc, cur, idx, src) => {
+         console.log("acc", acc, "cur", cur, "idx", idx);
+         return acc + cur; // 0이 cur로 불러와진 배열요소랑 더하기한 값이 return 되서 매개변수 acc로 들어감
+      }, 0);
+      console.log("result:", result);
+      //acc = 0
+      //curr = 배열안에 있는요소 1, 2, 3, 4, 5, 6, 7
+      //idx = 0, 1, 2, 3, 4, 5, 6
+
+      //acc: 0 cur:1 idx: 0
+      //acc: 1 cur:2 idx: 1
+      //acc: 3 cur:3 idx: 2
+      //acc: 6 cur:4 idx: 3
+      //acc: 10 cur:5 idx: 4
+      //acc: 15 cur:6 idx: 5
+      //acc: 21 cur:7 idx: 6
+      //result: 28 
+```
+***reduce를 활용해 중복된 값 제거***
+```javascript
+      const fruits = ["사과", "딸기", "배", "참외", "딸기", "수박"];
+      const result = fruits.reduce((acc, cur) => {
+         if(arr.includes(cur) === false){
+            acc.push(cur);
+         }
+         return acc;
+      }, [])
+      //빈배열로 시작
+
+      console.log(result);
+      //(5) ["사과", "딸기", "배", "참외", "수박"];
+```
+*** ***
+
+## 모듈 시스템
+
+
+
+
+
+
+
+
+
+
