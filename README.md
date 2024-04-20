@@ -10,7 +10,7 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 ```
 ## DOM이란?
 - Document Object Model
-- 문서 객체 모델로 브라우저에서 Javascript로 html요소를 제어할 수 있도록 웹 문서를 객체화함, 이를 제공하는 API(브라우저에서 제공하는 기능 같은것)
+- 문서 객체 모델로 브라우저에서 Javascript로 html요소를 제어할 수 있도록 웹 문서를 객체화해서 제공하는 API(브라우저에서 제공하는 기능 같은것)
 - DOM -> Tree구조 (html구조)(DOM Tree) -> 각각의 요소를 node라고 함
 
 ## BOM
