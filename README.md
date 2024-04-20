@@ -26,7 +26,7 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 ### document
 - 현재문서에 대한 정보를 갖고 있는 객체이다
 ### history
-- 현재 브하우저가 접근했던 URL history를 제어할 수 있다
+- 현재 브라우저가 접근했던 URL history를 제어할 수 있다
 - history.back()
 - history.foward()
 ### location
