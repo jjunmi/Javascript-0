@@ -80,5 +80,6 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
    ```
    html parsing -> html  parsing 동시에 script fetch(스크립트 가져옴) -> html parsing 중지 -> script execution(스크립트 실행) -> html parsing 이어서 완료
 
-## 동기 blocking - 답변 결과 기다림
-## 비동기 Non-bloking - 답변 결과 안 기다림
+*** ***
+***동기 blocking - 답변 결과 기다림***
+***비동기 Non-bloking - 답변 결과 안 기다림***
