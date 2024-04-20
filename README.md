@@ -19,7 +19,7 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 - 마우스(하드웨어 인터페이스)
 document.getRootNode() -> 최상위 node 반환
 document.childNodes() -> 하위 node들 반환
-
+*** ***
 <추가 정보는 mdn 참고>
 ### window
 - 모든 객체가 소속된 객체이며, 브라우저 창을 의미한다
