@@ -663,20 +663,46 @@ commonjs > index.js
 7. node index.js -> YYYYescape 2019-01-25T00:00:00-02:00Z
    node index.js -> 2024-05-01 (오늘날짜 출력됨)
 ```
-### pgakage.json
+### package.json
 - 프로젝트 대한 정보를 갖고 있는 파일
 - dependencies 속성을 활용하여 프로젝트에 의존된 라이브러리를 관리
 - "scripts": {"명령어 설정 start":  "echo helloworld"} -> npm run start
 - dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈
+- "scripts": {"start":  "nodemon index.js"} -> npm run start / npm start
+- node_modules삭제 해도 npm install 명령하면 package.json파일 참고해서 다시 생성해줌 (github에 안올려도됨)
+- npm install --production ->  dependencies 모듈만 설치됨
+
+- npm install -g nodemon -> permission denied -> 관리자권한 -> sudo npm install -g nodemon
 ```bash
    npm init
    echo hello world
    npm i moment
    npm install --save-dev nodemon
+
+   npm init
+   npm init -y
+   npm install dayjs
+   npm i dayjs
+   npm i dayjs@1.10.7
+   npm i nodemon eslint --save-dev
+   npm i nodemon eslint -D
+   ./node_modules/.bin/nodemon index.js
+   npm install -g nodemon
+   sudo npm install -g nodemon
+   nodemon -v
+   sudo npm uninstall -g nodemon
+   npm install --production
+
+   npm update nodemon
+   npm root
+   npm root -g
+   npm ls
+   npm ls --depth=2
+   npm ls -g
    
 ```
-### pgakage-lock.json
--프로젝트에 설치된 모듈들의 의존성 트리를 기록하고 있음
+### package-lock.json
+- 프로젝트에 설치된 모듈들의 의존성 트리를 기록하고 있음
 
 ### node_modules
 - 설치한 라이브러리들이 있는 경로
