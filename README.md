@@ -214,7 +214,7 @@ ES5 bind -> this 설정
       console.log('['+ event.eventPhase +']bubbling div 태그')
    }, false)
 ```
-***이벤트를 막는 메소드들***
+## 이벤트를 막는 메소드들
 ### e.stopPropagation
 - bubbling, capturing 전파를 막는 메소드
 ```javascript
