@@ -17,8 +17,8 @@ HTML을 한줄씩 해석해 객체화하여 자바스크립트로 접근할 수 
 - Browser Object Model
 - 브라우저를 객체화 함으로서 자바스크립트로 제어하기 위한 인터페이스
 - 마우스(하드웨어 인터페이스)
-document.getRootNode() -> 최상위 node 반환
-document.childNodes() -> 하위 node들 반환
+- document.getRootNode() -> 최상위 node 반환
+- document.childNodes() -> 하위 node들 반환
 *** ***
 <추가 정보는 mdn 참고>
 ### window
