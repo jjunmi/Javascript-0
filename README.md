@@ -295,20 +295,21 @@ ES5 bind -> this 설정
       console.log(
          "과일중에 배가 있나요?",
          fruits.some((fruit, index) => {
-            console.log("index:",index, "fruit", fruit);
+            console.log("index:",index, "fruit:", fruit);
             return fruit === "배";
          })
       )
       //index: 0 fruit: 사과
       //index: 1 fruit: 딸기
       //index: 2 fruit: 배
+      //과일중에 배가 있나요? true
 ```
 ### every()
 - 배열 안의 모든 요소에 주어진 판별함수가 모두 참일 경우에만 true를 반환함
 ```javascript
       const fruits = ["수박", "수박", "수박", "수박", "딸기", "수박"];
       const result = fruits.every((fruit) -> fruit === "수박");
-      console.log(reault); //false
+      console.log(result); //false
 ```
 ### filter
 - 배열의 각 요소들을 함수에 해당하는 요소들만 필터링해 새 배열로 반환
