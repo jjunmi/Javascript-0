@@ -456,7 +456,7 @@ module > index.js
       import subtract from './math.js';
       //import 이름 지정 from './math.js';
 
-      console.log('substract:', subtract(80, 90));
+      console.log('subtract:', subtract(80, 90));
       //subtract: -10
 ```
 module > math.js
