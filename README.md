@@ -457,7 +457,7 @@ module > index.js
       //import 이름 지정 from './math.js';
 
       console.log('substract:', subtract(80, 90));
-      //substract: -10
+      //subtract: -10
 ```
 module > math.js
 ```javascript
@@ -487,11 +487,11 @@ module > index.js
       console.log('perfectScore:', math.prefectScore);
       console.log('sum', math.sum(80, 10));
       console.log('avg', math.avg(80, 90));
-      console.log('substract:', math.subtract(80, 90));
+      console.log('subtract:', math.subtract(80, 90));
       //perfectScore: 100
       //sum: 90
       //avg: 85
-      //substract: -10
+      //subtract: -10
 ```
 ### CommonJS
 - NodeJS 환경에서 자바스크립트 모듈을 사용하기 위해 만들어진 모듈 시스템
@@ -518,12 +518,12 @@ commonjs > index.js
 ```javascript
 //방법1
       //const, let 사용가능
-      const {perfectScorre, sum, avg, subtract} = require('./math');
+      const {perfectScore, sum, avg, subtract} = require('./math');
 
       console.log('perfectScore:', prefectScore);
       console.log('sum', sum(80, 10));
       console.log('avg', avg(80, 90));
-      console.log('substract:', subtract(80, 90));
+      console.log('subtract:', subtract(80, 90));
 ```
 터미널 실행
 ```bash
@@ -538,7 +538,7 @@ commonjs > index.js
       console.log('perfectScore:', math.prefectScore);
       console.log('sum', math.sum(80, 10));
       console.log('avg', math.avg(80, 90));
-      console.log('substract:', math.subtract(80, 90));
+      console.log('subtract:', math.subtract(80, 90));
 ```
 터미널 실행
 ```bash
@@ -568,12 +568,12 @@ commonjs > index.js
 ```javascript
 //방법2
       //const, let 사용가능
-      const {perfectScorre, sum, avg, subtract} = require('./math');
+      const {perfectScore, sum, avg, subtract} = require('./math');
 
       console.log('perfectScore:', prefectScore);
       console.log('sum', sum(80, 10));
       console.log('avg', avg(80, 90));
-      console.log('substract:', subtract(80, 90));
+      console.log('subtract:', subtract(80, 90));
 ```
 터미널 실행
 ```bash
