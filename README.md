@@ -604,7 +604,8 @@ commonjs > index.js
 4. npm install dayjs / npm install <모듈명> (라이브러리 다운 사이트: npmjs.com)
 ***dayjs.js***
 ***moment***
-***nodemon***
+***nodemon(CLI) : node 명령어랑 같음, javascript 파일을 node 실행환경에서 실행시켜줌, node명령어와 다르게 nodemon은 javascript 파일이 변경되면 자동감지해서 재시행함!!***
+   node명령어: index.js에 코드입력 -> node index.js -> index.js 코드변경 -> node index.js 다시 실행해야 변경된 문자 출력
 ### 날짜 표시시 작성 코드
 ```javascript
       //2024년 5월 1일
@@ -690,9 +691,16 @@ commonjs > index.js
    npm install dayjs
    npm i dayjs
    npm i dayjs@1.10.7
+
+   npm install --save
+   npm install -S
+   npm install --save-dev
+   npm install -D
    npm i nodemon eslint --save-dev
    npm i nodemon eslint -D
+
    ./node_modules/.bin/nodemon index.js
+
    npm install -g nodemon
    sudo npm install -g nodemon
    nodemon -v
