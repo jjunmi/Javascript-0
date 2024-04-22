@@ -605,7 +605,8 @@ commonjs > index.js
 ### 모듈
 - dayjs.js
 - moment
-- nodemon(CLI) : node 명령어랑 같음, javascript 파일을 node 실행환경에서 실행시켜줌, node명령어와 다르게 nodemon은 javascript 파일이 변경되면 자동감지해서 재시행함!!
+- nodemon(CLI)
+   > node 명령어랑 같음, javascript 파일을 node 실행환경에서 실행시켜줌, node명령어와 다르게 nodemon은 javascript 파일이 변경되면 자동감지해서 재시행함!!
    > node명령어: index.js에 코드입력 -> node index.js -> index.js 코드변경 -> node index.js 다시 실행해야 변경된 문자 출력
 ### 날짜 표시시 작성 코드
 ```javascript
