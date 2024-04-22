@@ -736,6 +736,10 @@ commonjs > index.js
 
 ## 웹팩 (Webpack)
 - 여러개의 파일을 하나로 묶어주는 번들러
+- 로컬환경에 설치된 cli을 실행하기 위해서는 npx 명령어를 활용
+- --entry 진입점, 어떠한 파일을 기준으로 번들링을 할것인가
+- npx webpack --entry ./src/index.js --output-path ./dist  : 기본적으로 production이 적용이 되서 압축되서 파일이 생성됨
+- npx webpack --entry ./src/index.js --output-path ./dist --mode development : 압축없이 파일 번들링
 ```bash
    npm init -y
    npm install -save-dev webpack webpack-cli
@@ -743,7 +747,22 @@ commonjs > index.js
    npx webpack --entry ./src/index.js --output-path ./dist --mode development
 
 ```
-
+### 환경설정 파일을 활용해서 웹팩적용
+- [webpack](https://webpack.kr/)
+- webpack.config.js 파일생성후 하단 코드 넣기 : 웹팩을 실행할때 자동으로 파일 참고
+- npx webpack
+```javascript
+      const path = require('path');
+      
+      module.exports = {
+            mode: 'production', //development
+            entry: './src/index.js',
+            output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js',
+        },
+      };
+```
 
 
 
