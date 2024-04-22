@@ -670,13 +670,15 @@ commonjs > index.js
 - 프로젝트 대한 정보를 갖고 있는 파일
 - dependencies 속성을 활용하여 프로젝트에 의존하는 라이브러리를 관리
 - npm init 자동 생성 (npm init -y)
+- echo: 터미널에 문자열을 출력하는 명령어
 - "scripts": {"명령어 설정 start":  "echo helloworld"} -> npm run start
-- dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈
-- "scripts": {"start":  "nodemon index.js"} -> npm run start / npm start
-- node_modules삭제 해도 npm install 명령하면 package.json파일 참고해서 다시 생성해줌 (github에 안올려도됨)
+- "scripts": {"start":  "nodemon index.js"} -> npm run start / npm start (start만 run 생략가능 = npm start)
+- dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈 (npm install --save-dev nodemon)
+- node_modules삭제 해도 npm install 명령하면 package.json파일 참고해서 다시 생성해줌 (github에 안 올려도됨)
 - npm install --production ->  dependencies 모듈만 설치됨
-
 - npm install -g nodemon -> permission denied -> 관리자권한 -> sudo npm install -g nodemon
+- [package.json docs](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
+ 
 ```bash
    npm init
    echo hello world
