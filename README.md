@@ -188,7 +188,7 @@ ES5 bind -> this 설정
       }
       printThis();
 ```
-***화살표함수는 객체 메서드를 선언할때 사용한된다, function(){}권장***
+***객체 메서드를 선언할때 화살표함수 보단 function(){}권장***
 ***화살표함수는 외부스코프인 window를 불러옴***
 ```javascript
       let person = {
