@@ -605,6 +605,7 @@ commonjs > index.js
 ### 모듈
 - dayjs.js
 - moment
+- vue-cli
 - nodemon(CLI)
    > node 명령어랑 같음, javascript 파일을 node 실행환경에서 실행시켜줌, node명령어와 다르게 nodemon은 javascript 파일이 변경되면 자동감지해서 재시행함!!
    >> ./node_modules/.bin/nodemon index.js -> 로컬에 설치 되어있기 때문에 실행할때 index.js 파일에 접근해서 실행해야함
@@ -722,6 +723,11 @@ commonjs > index.js
    
 ```
 [NPM Command](https://docs.npmjs.com/cli/v10/commands)
+### 버전 [MAJOR, MINOR, PATCH]
+- MAJOR : 주요변화, 기존 API추가/변경/삭제 등, 이전 버전과 호환이 안될 수 있음
+- MINOR : 기능 추가, 이전버전과 호환됨
+- PATCH : 버그 수정, 이전버전과 호환됨
+
 ### package-lock.json
 - 프로젝트에 설치된 모듈들의 의존성 트리를 기록하고 있음
 
