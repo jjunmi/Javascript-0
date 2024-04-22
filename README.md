@@ -595,14 +595,17 @@ commonjs > index.js
      ```
 ## NPM
 - Node Package Manager
-- 모듈저장소 -> 다운로드 (npm) -> 애플리케이션
 - Node.js : 자바스크립트 런타임 환경
+- 모듈저장소 -> 다운로드 (npm) -> 애플리케이션
 
 1. Node.js 설치
 2. node -v
 3. npm -v
 4. npm install dayjs / npm install <모듈명> (라이브러리 다운 사이트: npmjs.com)
-
+***dayjs.js***
+***moment***
+***nodemon***
+### 날짜 표시시 작성 코드
 ```javascript
       //2024년 5월 1일
       const getToday = () => {
@@ -628,15 +631,14 @@ commonjs > index.js
       }
       console.log(getToday())
 ```
+다양한 형식일때 복잡해지는 코드, dayjs 모듈 다운받아서 사용가능
 ```plaintext
       2024년 5월 1일
       2024년 5월 1일 15시 24분 22초
       2024/05/01
       2024.05.01
 ```
-***dayjs.js***
-***moment***
-***nodemon***
+***dayjs.js 다운***
 ```plaintext
 실습
 1. LEARN-NPM 파일 디렉터리 생성
@@ -666,7 +668,8 @@ commonjs > index.js
 ```
 ### package.json
 - 프로젝트 대한 정보를 갖고 있는 파일
-- dependencies 속성을 활용하여 프로젝트에 의존된 라이브러리를 관리
+- dependencies 속성을 활용하여 프로젝트에 의존하는 라이브러리를 관리
+- npm init 자동 생성 (npm init -y)
 - "scripts": {"명령어 설정 start":  "echo helloworld"} -> npm run start
 - dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈
 - "scripts": {"start":  "nodemon index.js"} -> npm run start / npm start
