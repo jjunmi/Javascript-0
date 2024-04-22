@@ -581,8 +581,8 @@ commonjs > index.js
 ```
 
 ### NodeJS환경에서 ES Module 사용 방법
-- CommonJS 모듈 시스템을 채택했던 NodeJS 환경에서 ES Module을 사용하려면 ___Babel___과 같은 트랜스파일러(transpiler)를 사용했어야 했는데
-- NodeJS버전 ___13.2부터 ES Module시스템에 대한 정식 지원___이 시작됨에 따라 다른 도구 없이 NodeJS에서 사용가능
+- CommonJS 모듈 시스템을 채택했던 NodeJS 환경에서 ES Module을 사용하려면 Babel과 같은 트랜스파일러(transpiler)를 사용했어야 했는데
+- NodeJS버전 13.2부터 ES Module시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 NodeJS에서 사용가능
 - package.json -> type="module" 선언
   1. package.json 파일 생성
      ```javascript
