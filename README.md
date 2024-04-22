@@ -607,6 +607,7 @@ commonjs > index.js
 - moment
 - nodemon(CLI)
    > node 명령어랑 같음, javascript 파일을 node 실행환경에서 실행시켜줌, node명령어와 다르게 nodemon은 javascript 파일이 변경되면 자동감지해서 재시행함!!
+   >> ./node_modules/.bin/nodemon index.js -> 로컬에 설치 되어있기 때문에 실행할때 index.js 파일에 접근해서 실행해야함
    >> node명령어: index.js에 코드입력 -> node index.js -> index.js 코드변경 -> node index.js 다시 실행해야 변경된 문자 출력
 ### 날짜 표시시 작성 코드
 ```javascript
@@ -678,8 +679,8 @@ commonjs > index.js
 - "scripts": {"start":  "nodemon index.js"} -> npm run start / npm start (start만 run 생략가능 = npm start)
 - dependencies = 배포, devDependencies = 개발 할때만 사용하는 모듈 (npm install --save-dev nodemon)
 - node_modules삭제 해도 npm install 명령하면 package.json파일 참고해서 다시 생성해줌 (github에 안 올려도됨)
-- npm install --production ->  dependencies 모듈만 설치됨
-- npm install -g nodemon -> permission denied -> 관리자권한 -> sudo npm install -g nodemon
+- npm install --production -> devDpendencies 모듈을 제외하고 dependencies 모듈만 설치됨
+- npm install -g nodemon -> permission denied -> 관리자 권한 -> sudo npm install -g nodemon (mac)
 - [package.json docs](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
  
 ```bash
@@ -701,8 +702,8 @@ commonjs > index.js
    npm i nodemon eslint --save-dev
    npm i nodemon eslint -D
 
+   npm i nodemon 
    ./node_modules/.bin/nodemon index.js
-
    npm install -g nodemon
    sudo npm install -g nodemon
    nodemon -v
@@ -710,6 +711,9 @@ commonjs > index.js
    npm install --production
 
    npm update nodemon
+   npm uninstall nodemon
+   npm install nodemon
+
    npm root
    npm root -g
    npm ls
@@ -717,6 +721,7 @@ commonjs > index.js
    npm ls -g
    
 ```
+[NPM Command](https://docs.npmjs.com/cli/v10/commands)
 ### package-lock.json
 - 프로젝트에 설치된 모듈들의 의존성 트리를 기록하고 있음
 
