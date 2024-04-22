@@ -431,7 +431,7 @@ module > index.js
 ```
 ```javascript
 //방법2
-      //import * as math from './math.js';
+      import * as math from './math.js';
       //모든것들 * as 별칭
       
       console.log('perfectScore:', math.prefectScore);
