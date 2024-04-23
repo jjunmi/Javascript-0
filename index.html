@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./arrayApi.js" type="module" defer></script>
+    <!-- <script src="./module/index.js" type="module" defer></script> -->
+    <!-- <script src="./commonjs/index.js" type="module" defer></script> -->
+</head>
+<body>
+    <!-- 1 -->
+    <a href="#" class="link" onclick="openLink();">새 탭에서 팝업탕 열기</a>
+    <!-- 2 -->
+    <a href="#" class="link">새 탭에서 팝업탕 열기 241936263</a>
+    <script>
+        //  1
+        const link = document.querySelector('.link');
+        link.addEventListener('click', function () {
+            window.open("https://www.naver.com/", "_blank", "width=500, height=500");
+        })
+        // 2
+        function openLink() {
+            window.open(
+                'https://ssd0908.tistory.com/entry/JavaScript-windowopen-%EC%83%88%EC%B0%BD%EC%9C%BC%EB%A1%9C-%EC%97%B4%EA%B8%B0-%EC%82%AC%EC%9A%A9%EB%B2%95',
+                '_blank', "width=500, height=500");
+        };
+    </script>
+</body>
+</html>
