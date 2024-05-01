@@ -398,6 +398,11 @@ ES5 bind -> this 설정
 - export (변수 , 함수 , class 내보낼때)
 - import
 ```javascript
+      function add(a, b) {
+return a + b;
+      }
+```
+```javascript
    import a_number from './a/js'
    import b_number from './b.js'
 
