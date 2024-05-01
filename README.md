@@ -397,11 +397,7 @@ ES5 bind -> this 설정
 ### ES Module(ES6)
 - export (변수 , 함수 , class 내보낼때)
 - import
-```javascript
-      function add(a, b) {
-return a + b;
-      }
-```
+- package.json -> "type": "module" 추가
 ```javascript
    import a_number from './a/js'
    import b_number from './b.js'
@@ -504,6 +500,30 @@ module > index.js
 - 불러올때 require
 - commonjs > math.js
 - commonjs > index.js
+
+### math.js <common js>
+```javascript
+      function add(a, b) {
+         return a + b;
+      }
+      function sub(a, b){
+         return a - b;
+      }
+      module.exports = {
+         add,
+         sub,
+      };
+```
+### index.js
+```javascript
+      //const moduleData = require("./math"); 방법1
+      const { add, sub } = require ("./math");//방법2
+
+      console.log(add(1, 2));//방법2
+      console.log(sub(e, 2));//방법2
+      //console.log(moduleData.add(1, 2)); //3  방법1
+      //console.log(moduleData.sub(1, 2)); //-1  방법1
+```
 
 commonjs > math.js
 ```javascript
